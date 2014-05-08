@@ -42,3 +42,15 @@ app.configure(function() {
     app.use(flash()); // use connect-flash for flash messages stored in session
 
 });
+
+var router = express.Router();
+
+router.get('/', function(req, res) {
+    res.render('index');
+});
+
+app.use('/', router);
+
+var port = 3000;
+app.listen(port);
+console.log('Magic happens on port ' + port);
